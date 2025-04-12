@@ -3,9 +3,9 @@ import React from 'react';
 const StatsSection = () => {
   return (
     <section className="py-12 px-6 md:px-12">
-      <div className="bg-white rounded-lg shadow-lg p-8">
+      <div className="bg-white rounded-lg shadow-lg p-6 md:p-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div className="flex items-center justify-center md:justify-start md:border-r border-gray-200">
+          <div className="flex items-center justify-center border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0">
             <div className="bg-red-100 p-3 rounded-full mr-4">
               <img src="/images/user.png" alt="Users" className="h-6 w-6" />
             </div>
@@ -15,7 +15,7 @@ const StatsSection = () => {
             </div>
           </div>
           
-          <div className="flex items-center justify-center md:justify-start md:border-r border-gray-200">
+          <div className="flex items-center justify-center border-b md:border-b-0 md:border-r border-gray-200 pb-6 md:pb-0">
             <div className="bg-red-100 p-3 rounded-full mr-4">
               <img src="/images/location.png" alt="Locations" className="h-6 w-6" />
             </div>
@@ -25,7 +25,7 @@ const StatsSection = () => {
             </div>
           </div>
           
-          <div className="flex items-center justify-center md:justify-start">
+          <div className="flex items-center justify-center">
             <div className="bg-red-100 p-3 rounded-full mr-4">
               <img src="/images/server.png" alt="Servers" className="h-6 w-6" />
             </div>
