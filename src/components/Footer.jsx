@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-50 py-16 px-6 md:px-12">
+    <footer className="bg-gray-50 py- px-6 md:px-12  ">
       <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="md:col-span-1">
           <div className="mb-6 flex">
@@ -13,14 +13,14 @@ const Footer = () => {
             LaslesVPN is a private virtual network that has unique features and has high security.
           </p>
           <div className="flex space-x-4">
-            <a href="#" className="bg-white p-2 rounded-full shadow">
-              <img src="/images/Facebook.png" alt="Facebook" className="h-16 w-16" />
+            <a href="#">
+              <img src="/images/Facebook.png" alt="Facebook" className="h-20 w-20" />
             </a>
-            <a href="#" className="bg-white p-2 rounded-full shadow">
-              <img src="/images/Twitter.png" alt="Twitter" className="h-16 w-16" />
+            <a href="#" >
+              <img src="/images/Twitter.png" alt="Twitter" className="h-20 w-20" />
             </a>
-            <a href="#" className="bg-white p-2 rounded-full shadow">
-              <img src="/images/Instagram.png" alt="Instagram" className="h-16 w-16" />
+            <a href="#" >
+              <img src="/images/Instagram.png" alt="Instagram" className="h-20 w-20" />
             </a>
           </div>
           <p className="text-gray-500 text-sm mt-6">©2023 LaslesVPN</p>

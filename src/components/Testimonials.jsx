@@ -50,11 +50,22 @@ const Testimonials = () => {
   // Function to scroll to a specific index
   const scrollToIndex = (index) => {
     if (scrollContainerRef.current) {
-      const cardWidth = 370; // Card width + gap
-      scrollContainerRef.current.scrollTo({
-        left: index * cardWidth,
-        behavior: 'smooth'
-      });
+      // Get the width of the first card including margins
+      const cards = scrollContainerRef.current.querySelectorAll('div[class*="bg-white"]');
+      if (cards.length > 0) {
+        const card = cards[0];
+        const cardRect = card.getBoundingClientRect();
+        const cardWidth = cardRect.width;
+        const cardMargin = parseInt(window.getComputedStyle(card).marginLeft) + 
+                          parseInt(window.getComputedStyle(card).marginRight);
+        const totalCardWidth = cardWidth + cardMargin;
+        
+        // Scroll to the selected card
+        scrollContainerRef.current.scrollTo({
+          left: index * totalCardWidth,
+          behavior: 'smooth'
+        });
+      }
       setActiveIndex(index);
     }
   };
@@ -72,7 +83,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 px-6 md:px-12">
+    <section className="py-4 px-6 md:px-12">
       <h2 className="text-3xl font-bold mb-4 text-center">Trusted by Thousands of</h2>
       <h2 className="text-3xl font-bold mb-8 text-center">Happy Customer</h2>
       <p className="text-gray-600 mb-12 max-w-2xl mx-auto text-center">
@@ -81,31 +92,31 @@ const Testimonials = () => {
       
       <div 
         ref={scrollContainerRef} 
-        className="flex overflow-x-auto gap-6 pb-8 scroll-smooth"
+        className="flex overflow-x-auto gap-6 pb-8 scroll-smooth snap-x"
       >
         {testimonials.map((testimonial, index) => (
           <div 
             key={index} 
-            className="bg-white rounded-lg p-8 border border-gray-200 w-[400px] flex-shrink-0 mx-8"
+            className="bg-white rounded-lg p-4 sm:p-6 md:p-8 border border-gray-200 w-[280px] sm:w-[320px] md:w-[400px] flex-shrink-0 mx-3 sm:mx-5 md:mx-8 snap-center"
           >
             <div className="flex justify-between items-center mb-4">
               <div className="flex items-center">
                 <img 
                   src={testimonial.avatar} 
                   alt={testimonial.name} 
-                  className="w-12 h-12 rounded-full mr-4" 
+                  className="w-10 h-10 sm:w-12 sm:h-12 rounded-full mr-3 sm:mr-4" 
                 />
                 <div>
-                  <h4 className="font-bold">{testimonial.name}</h4>
-                  <p className="text-gray-600 text-sm">{testimonial.location}</p>
+                  <h4 className="font-bold text-sm sm:text-base">{testimonial.name}</h4>
+                  <p className="text-gray-600 text-xs sm:text-sm">{testimonial.location}</p>
                 </div>
               </div>
               <div className="flex items-center">
-                <span className="mr-1">{testimonial.rating}</span>
-                <img src="/images/Group 1161.png" alt="Rating" className="h-4 w-4" />
+                <span className="mr-1 text-sm sm:text-base">{testimonial.rating}</span>
+                <img src="/images/Group 1161.png" alt="Rating" className="h-3 w-3 sm:h-4 sm:w-4" />
               </div>
             </div>
-            <p className="text-gray-700">{testimonial.comment}</p>
+            <p className="text-gray-700 text-sm sm:text-base">{testimonial.comment}</p>
           </div>
         ))}
       </div>
