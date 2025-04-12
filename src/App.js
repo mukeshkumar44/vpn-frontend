@@ -1,25 +1,48 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header';
+import HeroSection from './components/HeroSection';
+import StatsSection from './components/StatsSection';
+import PricingPlans from './components/PricingPlans';
+import GlobalMap from './components/GlobalMap';
+import Testimonials from './components/Testimonials';
+import SubscribeSection from './components/SubscribeSection';
+import Footer from './components/Footer';
+import SignIn from './components/SignIn';
+import SignUp from './components/SignUp';
 
-function App() {
+function HomePage() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <main>
+        <HeroSection />
+        <StatsSection />
+        <PricingPlans />
+        <GlobalMap />
+        <Testimonials />
+        <SubscribeSection />
+      </main>
+      <Footer />
+    </>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/signin" element={<SignIn />} />
+          <Route path="/signup" element={<SignUp />} />
+          <Route path="/features" element={<div className="p-10 text-center"><h1 className="text-3xl">Features Page</h1><p>This page is under construction</p></div>} />
+          <Route path="/pricing" element={<div className="p-10 text-center"><h1 className="text-3xl">Pricing Page</h1><p>This page is under construction</p></div>} />
+          <Route path="/testimonials" element={<div className="p-10 text-center"><h1 className="text-3xl">Testimonials Page</h1><p>This page is under construction</p></div>} />
+          <Route path="/help" element={<div className="p-10 text-center"><h1 className="text-3xl">Help Page</h1><p>This page is under construction</p></div>} />
+          <Route path="*" element={<div className="p-10 text-center"><h1 className="text-3xl">404 - Page Not Found</h1></div>} />
+        </Routes>
+      </Router>
+    </div>
+  );
+}
