@@ -2,7 +2,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <section className="py-16 px-6 md:px-12 flex flex-col md:flex-row items-center">
+    <section className="py- px-6 md:px-12 flex flex-col md:flex-row items-center">
       <div className="md:w-1/2 mb-10 md:mb-0">
         <h1 className="text-4xl md:text-5xl font-bold mb-6">
           Want anything to be easy with <span className="text-red-500">LaslesVPN</span>.

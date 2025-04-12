@@ -39,7 +39,7 @@ const PricingPlans = () => {
   ];
 
   return (
-    <section className="py px-6 md:px-12 text-center">
+    <section className="py-5 px-6 md:px-12 text-center ">
       <h2 className="text-3xl font-bold mb-2">Choose Your Plan</h2>
       <p className="text-gray-600 mb-12 max-w-2xl mx-auto">
         Let's choose the package that is best for you and explore it happily and cheerfully.

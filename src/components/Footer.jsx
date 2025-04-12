@@ -23,7 +23,7 @@ const Footer = () => {
               <img src="/images/Instagram.png" alt="Instagram" className="h-20 w-20" />
             </a>
           </div>
-          <p className="text-gray-500 text-sm mt-6">©2023 LaslesVPN</p>
+          <p className="text-gray-500 text-sm mt-2">©2023 LaslesVPN</p>
         </div>
         
         <div>
